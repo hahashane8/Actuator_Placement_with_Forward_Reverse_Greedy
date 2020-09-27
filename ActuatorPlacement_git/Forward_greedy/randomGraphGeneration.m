@@ -1,0 +1,1 @@
+adjGO = randomGraph(40,0.10);adjG = giantComponent(adjGO)save ("/Users/guobaiwei/Desktop/ControllabilityOptimization/adjG.mat", "adjG");

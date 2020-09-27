@@ -1,0 +1,2 @@
+% Objective function%% INPUTS: Input selection% OUTPUTS: Objective function%% GB: last updated, Jan 20, 2019function objout = obj(adjG,inputSelection,ep)     [x_1,y_1] = size(adjG);  B = zeros(x_1,x_1);  for i = 1: length(inputSelection)    B(inputSelection(i),inputSelection(i)) = 1;   end  C = zeros(1,x_1);  D = zeros(1,x_1);    sys = ss(adjG,B,C,D);  Wc = gram(sys,'c');  objout = trace(inv(Wc+ep*eye(x_1)));  
+  return 
